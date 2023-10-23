@@ -1,0 +1,48 @@
+@startuml Kalender
+
+class Datum {
+  - Jahr: int
+  - Monat: int
+  - Woche: int
+  - Tag: int
+  - Zeitzone: String
+  - Wochentag: String
+}
+
+class Ereignis {
+  - Name: String
+  - Beschreibung: String
+  - Priorität: int
+  - Stichwort: String
+}
+
+class Zeitraum {
+    - Startzeitpunkt: String
+    - Endzeitpunkt: String
+    + calculate_Zeitraum(param: String): String
+}
+class Termin {
+  - Startzeitpunkt: Datum
+  - Endzeitpunkt: Datum
+  - Ort: String
+  - Teilnehmer: List<String>
+}
+
+class Aktion {
+  - Startzeitpunkt: Datum
+  - Endzeitpunkt: Datum
+}
+
+class ToDo {
+  - Deadline: Datum
+  - Unterkategorie: String
+}
+
+Zeitraum <|-- Termin
+Zeitraum <|-- Aktion
+Ereignis <|-- Termin
+Ereignis <|-- Aktion
+Ereignis <|-- ToDo
+Datum <|-- Ereignis
+
+@enduml
