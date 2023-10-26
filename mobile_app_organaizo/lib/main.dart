@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_app_organaizo/pages/home.dart';
 
 void main(){
   runApp( const MyApp());
@@ -18,17 +19,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(backgroundColor: Colors.black,
-        title: const Text('organAIzo')),
-        body: const Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.center,
-
-          // Wrap child in flexible or expanded widget 
-          children: [Icon(Icons.backpack), Icon(Icons.leaderboard), Icon(Icons.person)],)
-      ),
-    );
-  }
-}
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: HomePage());
+      }}
