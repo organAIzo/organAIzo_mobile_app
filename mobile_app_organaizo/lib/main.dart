@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_app_organaizo/pages/home.dart';
+import 'package:table_calendar/table_calendar.dart';
+import 'package:mobile_app_organaizo/pages/BasicCalendar.dart';
 
 void main(){
   runApp( const MyApp());
@@ -14,6 +16,9 @@ void main(){
 
 // Refactor with refactor
 
+
+
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -21,5 +26,5 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage());
+      home: TableBasicsExample());
       }}
