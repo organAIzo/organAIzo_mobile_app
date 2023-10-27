@@ -16,6 +16,8 @@ class _HomePageState extends State<HomePage> {
     categories = CategoryModel.getCategories();
   }
 
+
+
   @override
   void initState() {
     getCategories();
