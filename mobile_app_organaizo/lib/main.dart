@@ -7,13 +7,12 @@ void main(){
   runApp(MaterialApp(
     title: 'OrganAIzo',
 
-    initialRoute: '/Nav',
+    //initialRoute: '/',
 
     routes: {
-      '/': (context) => HomePage(),
+      '/': (context) => Navigation(),
+      '/home': (context) => HomePage(),
       '/kalender': (context) => TableBasicsExample(),
-      '/Nav': (context) => Navigation(),
-
     }
   ));
 
