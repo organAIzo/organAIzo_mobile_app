@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_app_organaizo/models/category_model.dart';
 import 'package:mobile_app_organaizo/models/recommendation_model.dart';
-import 'package:mobile_app_organaizo/Navigation.dart';
+import 'package:mobile_app_organaizo/navigation.dart';
 
 
 class HomePage extends StatefulWidget {

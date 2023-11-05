@@ -1,3 +1,4 @@
+// ignore: file_names
 import 'package:flutter/material.dart';
 //import 'package:mobile_app_organaizo/main.dart';
 import 'package:mobile_app_organaizo/pages/BasicCalendar.dart';
@@ -5,7 +6,10 @@ import 'package:mobile_app_organaizo/pages/home.dart';
 
 
 class Navigation extends StatefulWidget{
+  const Navigation({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _NavState createState() => _NavState();
 }
 

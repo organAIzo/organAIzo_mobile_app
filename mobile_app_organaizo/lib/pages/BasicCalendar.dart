@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
-import 'package:mobile_app_organaizo/Navigation.dart';
+import 'package:mobile_app_organaizo/navigation.dart';
 
 import '../utils.dart';
 

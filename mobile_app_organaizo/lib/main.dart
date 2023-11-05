@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_app_organaizo/pages/home.dart';
 import 'package:mobile_app_organaizo/pages/BasicCalendar.dart';
-import 'Navigation.dart';
+import 'navigation.dart';
 
 void main(){
   runApp(MaterialApp(
