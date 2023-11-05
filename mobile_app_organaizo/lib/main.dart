@@ -10,7 +10,7 @@ void main(){
     //initialRoute: '/',
 
     routes: {
-      '/': (context) => Navigation(),
+      '/': (context) => const Navigation(),
       '/home': (context) => HomePage(),
       '/kalender': (context) => TableBasicsExample(),
     }
