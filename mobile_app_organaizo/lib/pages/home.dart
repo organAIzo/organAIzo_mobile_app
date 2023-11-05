@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_app_organaizo/models/category_model.dart';
+import 'package:mobile_app_organaizo/models/recommendation_model.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -11,21 +12,16 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   List<CategoryModel> categories = [];
+  List<RecommendationModel> recommended = [];
 
-  void getCategories(){
+  void getInitialInfo() {
     categories = CategoryModel.getCategories();
-  }
-
-
-
-  @override
-  void initState() {
-    getCategories();
+    recommended = RecommendationModel.getRecommendation();
   }
 
   @override
   Widget build(BuildContext context) {
-    getCategories();
+    getInitialInfo();
     return Scaffold(
       appBar: appBar(),
       backgroundColor: Colors.white,
@@ -34,7 +30,60 @@ class _HomePageState extends State<HomePage> {
         children: [
           _searchField(),
           const SizedBox(height:40,),
-          category()
+          category(),
+          const SizedBox(height: 40,),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Padding(
+                padding: EdgeInsets.only(left:20),
+                child: Text('Recommendation\n to Dos',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600
+                ),),
+              ),
+              const SizedBox(height: 15,),
+              Container(color: Colors.white,
+              height: 240,
+              child: ListView.separated(
+                itemBuilder: (context, index) {
+                  return Container(
+                    width: 210, 
+                    decoration: BoxDecoration(
+                      color: recommended[index].boxColor.withOpacity(0.3),
+                      borderRadius: BorderRadius.circular(20)
+                    ),
+                    child: Column(
+                      children: [
+                        recommended[index].icon,
+                        Text(
+                          recommended[index].name, 
+                          style: const TextStyle(
+                            fontWeight: FontWeight.w500,
+                            color: Colors.black,
+                          )
+                        )
+
+                      ],
+                    ),
+                  );
+                },
+                 separatorBuilder: (context, index) => const SizedBox(width: 25,),
+                  itemCount: recommended.length,
+                  scrollDirection: Axis.horizontal,
+                  padding: const EdgeInsets.only(
+                    left: 20,
+                    right: 20
+                  ),
+                  ),
+                  )
+              
+
+            ],
+
+          )
         ],
       ),
     );
