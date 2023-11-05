@@ -35,61 +35,65 @@ class _HomePageState extends State<HomePage> {
           const SizedBox(height:40,),
           category(),
           const SizedBox(height: 40,),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Padding(
-                padding: EdgeInsets.only(left:20),
-                child: Text('Recommendation\n to Dos',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 18,
-                  fontWeight: FontWeight.w600
-                ),),
-              ),
-              const SizedBox(height: 15,),
-              Container(color: Colors.white,
-              height: 240,
-              child: ListView.separated(
-                itemBuilder: (context, index) {
-                  return Container(
-                    width: 210, 
-                    decoration: BoxDecoration(
-                      color: recommended[index].boxColor.withOpacity(0.3),
-                      borderRadius: BorderRadius.circular(20)
-                    ),
-                    child: Column(
-                      children: [
-                        recommended[index].icon,
-                        Text(
-                          recommended[index].name, 
-                          style: const TextStyle(
-                            fontWeight: FontWeight.w500,
-                            color: Colors.black,
-                          )
-                        )
-
-                      ],
-                    ),
-                  );
-                },
-                 separatorBuilder: (context, index) => const SizedBox(width: 25,),
-                  itemCount: recommended.length,
-                  scrollDirection: Axis.horizontal,
-                  padding: const EdgeInsets.only(
-                    left: 20,
-                    right: 20
-                  ),
-                  ),
-                  )
-              
-
-            ],
-
-          )
+          recommendedSection()
         ],
       ),
     );
+  }
+
+  Column recommendedSection() {
+    return Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Padding(
+              padding: EdgeInsets.only(left:20),
+              child: Text('Recommendation\n to Dos',
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 18,
+                fontWeight: FontWeight.w600
+              ),),
+            ),
+            const SizedBox(height: 15,),
+            Container(color: Colors.white,
+            height: 240,
+            child: ListView.separated(
+              itemBuilder: (context, index) {
+                return Container(
+                  width: 210, 
+                  decoration: BoxDecoration(
+                    color: recommended[index].boxColor.withOpacity(0.3),
+                    borderRadius: BorderRadius.circular(20)
+                  ),
+                  child: Column(
+                    children: [
+                      recommended[index].icon,
+                      Text(
+                        recommended[index].name, 
+                        style: const TextStyle(
+                          fontWeight: FontWeight.w500,
+                          color: Colors.black,
+                        )
+                      )
+
+                    ],
+                  ),
+                );
+              },
+               separatorBuilder: (context, index) => const SizedBox(width: 25,),
+                itemCount: recommended.length,
+                scrollDirection: Axis.horizontal,
+                padding: const EdgeInsets.only(
+                  left: 20,
+                  right: 20
+                ),
+                ),
+                )
+            
+
+          ],
+
+        );
   }
 
   Column category() {
