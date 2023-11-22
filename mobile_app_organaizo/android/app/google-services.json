@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "396832436896",
+    "project_id": "organaizo",
+    "storage_bucket": "organaizo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:396832436896:android:be97e2cf4f9c15f36fcfc5",
+        "android_client_info": {
+          "package_name": "com.example.mobile_app_organaizo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDqRzs-x11Oi80dQ1utJ51MHekAvNBzN8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

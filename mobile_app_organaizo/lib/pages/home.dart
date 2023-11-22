@@ -1,5 +1,3 @@
-//import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:mobile_app_organaizo/models/category_model.dart';
 import 'package:mobile_app_organaizo/models/recommendation_model.dart';
@@ -26,8 +24,11 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     getInitialInfo();
-    return const Scaffold(
-      bottomNavigationBar: BottomNavBar(),
+    return Scaffold(
+      appBar: appBar(),
+      body: Column(children: [_searchField(), category()],
+      ),
+      bottomNavigationBar: const BottomNavBar(),
     );  }
 
   Scaffold recommendedBox() {
