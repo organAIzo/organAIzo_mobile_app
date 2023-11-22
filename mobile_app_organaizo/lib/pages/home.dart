@@ -3,11 +3,12 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_app_organaizo/models/category_model.dart';
 import 'package:mobile_app_organaizo/models/recommendation_model.dart';
-import 'package:mobile_app_organaizo/Navigation.dart';
+import 'package:mobile_app_organaizo/Navigation/bottom_nav.dart';
+
 
 
 class HomePage extends StatefulWidget {
-   HomePage({super.key});
+   const HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -25,71 +26,76 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     getInitialInfo();
+    return const Scaffold(
+      bottomNavigationBar: BottomNavBar(),
+    );  }
+
+  Scaffold recommendedBox() {
     return Scaffold(
-      appBar: appBar(),
-      backgroundColor: Colors.white,
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          _searchField(),
-          const SizedBox(height:40,),
-          category(),
-          const SizedBox(height: 40,),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Padding(
-                padding: EdgeInsets.only(left:20),
-                child: Text('Recommendation\n to Dos',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 18,
-                  fontWeight: FontWeight.w600
-                ),),
-              ),
-              const SizedBox(height: 15,),
-              Container(color: Colors.white,
-              height: 240,
-              child: ListView.separated(
-                itemBuilder: (context, index) {
-                  return Container(
-                    width: 210, 
-                    decoration: BoxDecoration(
-                      color: recommended[index].boxColor.withOpacity(0.3),
-                      borderRadius: BorderRadius.circular(20)
-                    ),
-                    child: Column(
-                      children: [
-                        recommended[index].icon,
-                        Text(
-                          recommended[index].name, 
-                          style: const TextStyle(
-                            fontWeight: FontWeight.w500,
-                            color: Colors.black,
-                          )
+    appBar: appBar(),
+    backgroundColor: Colors.white,
+    body: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        _searchField(),
+        const SizedBox(height:40,),
+        category(),
+        const SizedBox(height: 40,),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Padding(
+              padding: EdgeInsets.only(left:20),
+              child: Text('Recommendation\n to Dos',
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 18,
+                fontWeight: FontWeight.w600
+              ),),
+            ),
+            const SizedBox(height: 15,),
+            Container(color: Colors.white,
+            height: 240,
+            child: ListView.separated(
+              itemBuilder: (context, index) {
+                return Container(
+                  width: 210, 
+                  decoration: BoxDecoration(
+                    color: recommended[index].boxColor.withOpacity(0.3),
+                    borderRadius: BorderRadius.circular(20)
+                  ),
+                  child: Column(
+                    children: [
+                      recommended[index].icon,
+                      Text(
+                        recommended[index].name, 
+                        style: const TextStyle(
+                          fontWeight: FontWeight.w500,
+                          color: Colors.black,
                         )
+                      )
 
-                      ],
-                    ),
-                  );
-                },
-                 separatorBuilder: (context, index) => const SizedBox(width: 25,),
-                  itemCount: recommended.length,
-                  scrollDirection: Axis.horizontal,
-                  padding: const EdgeInsets.only(
-                    left: 20,
-                    right: 20
+                    ],
                   ),
-                  ),
-                  )
-              
+                );
+              },
+               separatorBuilder: (context, index) => const SizedBox(width: 25,),
+                itemCount: recommended.length,
+                scrollDirection: Axis.horizontal,
+                padding: const EdgeInsets.only(
+                  left: 20,
+                  right: 20
+                ),
+                ),
+                )
+            
 
-            ],
+          ],
 
-          )
-        ],
-      ),
-    );
+        )
+      ],
+    ),
+  );
   }
 
   Column category() {
