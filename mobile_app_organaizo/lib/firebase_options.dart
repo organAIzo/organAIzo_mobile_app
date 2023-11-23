@@ -67,6 +67,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '396832436896',
     projectId: 'organaizo',
     storageBucket: 'organaizo.appspot.com',
+    androidClientId: '396832436896-akgpvndmpqbt6d3m4ogm7mth76spl89a.apps.googleusercontent.com',
+    iosClientId: '396832436896-gm2urrpaagbii0s41eeimh75gkh06ae7.apps.googleusercontent.com',
     iosBundleId: 'com.example.mobileAppOrganaizo',
   );
 
@@ -76,6 +78,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '396832436896',
     projectId: 'organaizo',
     storageBucket: 'organaizo.appspot.com',
+    androidClientId: '396832436896-akgpvndmpqbt6d3m4ogm7mth76spl89a.apps.googleusercontent.com',
+    iosClientId: '396832436896-m705fhbq4176lmnn1occcs379oh3g077.apps.googleusercontent.com',
     iosBundleId: 'com.example.mobileAppOrganaizo.RunnerTests',
   );
 }
