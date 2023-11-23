@@ -19,7 +19,7 @@ void initState() {
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
 
   Future.delayed(const Duration(seconds: 7), (){
-    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) => const HomePage()));
+    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) => const HomeScreen()));
   });
 }
 

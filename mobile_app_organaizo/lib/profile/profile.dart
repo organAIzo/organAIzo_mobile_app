@@ -7,13 +7,13 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(decoration: const BoxDecoration(color: Colors.grey),
-        child: Column(
-          children: [
-            
-          ],
-        ),
-      )
-    );
+      appBar: AppBar(
+        title: const Text('Profile'),
+      ),
+      body: ElevatedButton(child: Text('signout'),
+      onPressed: () async {
+        await AuthService().signOut();
+        Navigator.of(context).pushNamedAndRemoveUntil('/', (route) => false);
+      },)   );
   }
 }

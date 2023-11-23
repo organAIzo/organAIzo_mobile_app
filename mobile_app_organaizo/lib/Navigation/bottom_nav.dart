@@ -12,25 +12,25 @@ class BottomNavBar extends StatelessWidget {
           icon: Icon(
             Icons.home_outlined,
              size: 20,
-             color: Colors.white,
+             
               ),
                label: 'Home',),
                BottomNavigationBarItem(
           icon: Icon(
             Icons.access_alarm,
              size: 20,
-             color: Colors.white,
+             
               ),
                label: 'Test',),
                BottomNavigationBarItem(
           icon: Icon(
             Icons.person,
              size: 20,
-             color: Colors.white,
+             
               ),
                label: 'Profile',),
       ],
-      fixedColor: const Color.fromARGB(255, 255, 255, 255),
+      fixedColor: Color.fromARGB(255, 236, 7, 7),
       onTap: (int idx) {
         switch(idx) {
           case 0:
@@ -39,7 +39,7 @@ class BottomNavBar extends StatelessWidget {
           Navigator.pushNamed(context, '/about');
             break;
           case 2:
-          Navigator.pushNamed(context, '/about');
+          Navigator.pushNamed(context, '/profile');
             break;
                   
 

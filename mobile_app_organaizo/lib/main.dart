@@ -1,9 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
+import 'package:mobile_app_organaizo/pages/home.dart';
 import 'package:mobile_app_organaizo/routes.dart';
 import 'firebase_options.dart';
 import 'package:flutter/material.dart';
-import 'package:mobile_app_organaizo/pages/splash_screen.dart';
-import 'package:mobile_app_organaizo/login/login_screen.dart';
 
 
 Future main() async{
@@ -20,7 +19,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      initialRoute: '/',
       routes: appRoutes,
       debugShowCheckedModeBanner: false,
-      home: LoginScreen());
+    );
       }}
