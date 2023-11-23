@@ -30,7 +30,7 @@ class BottomNavBar extends StatelessWidget {
               ),
                label: 'Profile',),
       ],
-      fixedColor: Color.fromARGB(255, 236, 7, 7),
+      fixedColor: const Color.fromARGB(255, 236, 7, 7),
       onTap: (int idx) {
         switch(idx) {
           case 0:

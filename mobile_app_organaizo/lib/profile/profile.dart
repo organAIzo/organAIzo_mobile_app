@@ -10,7 +10,7 @@ class ProfileScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Profile'),
       ),
-      body: ElevatedButton(child: Text('signout'),
+      body: ElevatedButton(child: const Text('signout'),
       onPressed: () async {
         await AuthService().signOut();
         Navigator.of(context).pushNamedAndRemoveUntil('/', (route) => false);
