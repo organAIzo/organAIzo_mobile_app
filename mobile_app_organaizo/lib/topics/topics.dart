@@ -1,3 +1,4 @@
+// ignore: file_names
 import 'package:flutter/material.dart';
 import 'package:mobile_app_organaizo/Navigation/bottom_nav.dart';
 
@@ -14,7 +15,7 @@ class Topics extends StatelessWidget {
         decoration: const BoxDecoration(color: Colors.black),
         child: const Column(
           children: [
-            
+
 
           ],
         ),
