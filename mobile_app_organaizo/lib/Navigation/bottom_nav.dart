@@ -22,6 +22,15 @@ class BottomNavBar extends StatelessWidget {
              
               ),
                label: 'Test',),
+
+                BottomNavigationBarItem(
+          icon: Icon(
+            Icons.calendar_month,
+             size: 20,
+             
+              ),
+               label: 'organizer',),
+
                BottomNavigationBarItem(
           icon: Icon(
             Icons.person,
@@ -36,9 +45,11 @@ class BottomNavBar extends StatelessWidget {
           case 0:
             break;
           case 1:
-          Navigator.pushNamed(context, '/about');
+          Navigator.pushNamed(context, '/calory_tracker');
             break;
           case 2:
+          Navigator.pushNamed(context, '/org_home');
+          case 3:
           Navigator.pushNamed(context, '/profile');
             break;
                   

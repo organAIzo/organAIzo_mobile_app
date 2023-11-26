@@ -8,18 +8,9 @@ class Topics extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      bottomNavigationBar: const BottomNavBar(),
-      body: Container(
-        width: double.infinity,
-        decoration: const BoxDecoration(color: Colors.black),
-        child: const Column(
-          children: [
-
-
-          ],
-        ),
-      )
+    return const Scaffold(
+      bottomNavigationBar: BottomNavBar(),
     );
+      
   }
 }

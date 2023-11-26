@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:mobile_app_organaizo/routes.dart';
+import 'package:mobile_app_organaizo/themes/theme.dart';
 import 'firebase_options.dart';
 import 'package:flutter/material.dart';
 
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       initialRoute: '/',
       routes: appRoutes,
+      theme: appTheme,
       debugShowCheckedModeBanner: false,
     );
       }}
