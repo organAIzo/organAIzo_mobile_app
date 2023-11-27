@@ -34,4 +34,10 @@ var appTheme = ThemeData(
       shape: MaterialStateProperty.all(const RoundedRectangleBorder(borderRadius: BorderRadius.zero)),
     ),
   ),
+
+  bottomNavigationBarTheme: BottomNavigationBarThemeData(
+    backgroundColor: Colors.black,
+    selectedItemColor: Colors.orange.shade800,
+    unselectedItemColor: Colors.white38,
+  ),
 );

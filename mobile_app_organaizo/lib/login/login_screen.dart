@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_app_organaizo/services/auth.dart';
+import 'package:mobile_app_organaizo/services/auth_provider.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends ConsumerWidget {
   const LoginScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final authService = ref.watch(authServiceProvider);
     return Scaffold(
       body: Container(
         color: const Color.fromARGB(255, 35, 35, 35),
@@ -25,7 +27,7 @@ class LoginScreen extends StatelessWidget {
               child: LoginButton(
                 icon: Icons.gamepad,
                 text: 'Sign in with Google',
-                loginMethod: AuthService().googleLogin,
+                loginMethod: authService.googleLogin,
                 color: const Color.fromARGB(255, 79, 2, 211),
               ),
             ),

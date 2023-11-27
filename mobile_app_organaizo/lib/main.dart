@@ -3,6 +3,9 @@ import 'package:mobile_app_organaizo/routes.dart';
 import 'package:mobile_app_organaizo/themes/theme.dart';
 import 'firebase_options.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
+
 
 
 Future main() async{
@@ -10,7 +13,7 @@ Future main() async{
   await Firebase.initializeApp(
   options: DefaultFirebaseOptions.currentPlatform,
 );
-  runApp(const MyApp());
+  runApp(const ProviderScope(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
