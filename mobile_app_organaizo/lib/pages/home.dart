@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_app_organaizo/topics/topics.dart';
 import 'package:mobile_app_organaizo/login/login_screen.dart';
-import 'package:mobile_app_organaizo/pages/splash_screen.dart';
 import 'package:mobile_app_organaizo/services/auth_provider.dart';
 
 class HomeScreen extends StatelessWidget {

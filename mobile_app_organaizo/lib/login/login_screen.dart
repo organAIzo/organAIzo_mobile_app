@@ -9,31 +9,36 @@ class LoginScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final authService = ref.watch(authServiceProvider);
+    final screenSize = MediaQuery.of(context).size.width;
+    
     return Scaffold(
-      body: Container(
-        color: const Color.fromARGB(255, 35, 35, 35),
-        padding: const EdgeInsets.all(30),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            const SizedBox(height: 40),
-            const Text('organAIzo', textAlign: TextAlign.center, style: TextStyle(color:Colors.white, fontSize: 50),),
-            const SizedBox(height: 20),
-            const FlutterLogo(
-              size: 150,
-            ),
-            Flexible(
-              child: LoginButton(
-                icon: Icons.gamepad,
-                text: 'Sign in with Google',
-                loginMethod: authService.googleLogin,
-                color: const Color.fromARGB(255, 79, 2, 211),
+      body: Center(
+        child: Container(
+          width: screenSize > 600 ? 600 : screenSize,
+          color: const Color.fromARGB(255, 35, 35, 35),
+          padding: const EdgeInsets.all(30),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              const SizedBox(height: 40),
+              const Text('organAIzo', textAlign: TextAlign.center, style: TextStyle(color:Colors.white, fontSize: 50),),
+              const SizedBox(height: 20),
+              const FlutterLogo(
+                size: 150,
               ),
-            ),
-            LoginButton(text: 'Sign in with Apple', icon: Icons.apple, color: Colors.black, loginMethod: () {}),
-            LoginButton(text: 'Sign in with E-Mail', icon: Icons.email, color: Colors.red, loginMethod: (){}),
-          ],
+              Flexible(
+                child: LoginButton(
+                  icon: Icons.gamepad,
+                  text: 'Sign in with Google',
+                  loginMethod: authService.googleLogin,
+                  color: const Color.fromARGB(255, 79, 2, 211),
+                ),
+              ),
+              LoginButton(text: 'Sign in with Apple', icon: Icons.apple, color: Colors.black, loginMethod: () {}),
+              LoginButton(text: 'Sign in with E-Mail', icon: Icons.email, color: Colors.red, loginMethod: (){}),
+            ],
+          ),
         ),
       ),
     );
